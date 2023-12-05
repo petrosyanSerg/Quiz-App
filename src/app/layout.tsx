@@ -7,6 +7,9 @@ import "@/helpers/scss/_global.scss"
 
 
 export const metadata: Metadata = {
+  icons: {
+    icon:'public/favicon.ico'
+  },
   title: 'Quiz App',
   description: 'Test Task Created By Sergey',
 }
@@ -14,14 +17,15 @@ export const metadata: Metadata = {
 interface IRootProps {
   children: ReactNode
 }
-export default function RootLayout({children}: IRootProps) {
 
+export default function RootLayout({children}: IRootProps) {
+  
   return (
     <html lang="en">
       <body>
-        <Providers>
-          {children}
-        </Providers>
+         <Providers>
+           {children}
+         </Providers>
       </body>
     </html>
   )

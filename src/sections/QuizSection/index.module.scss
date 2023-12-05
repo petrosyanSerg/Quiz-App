@@ -1,0 +1,32 @@
+.start__section {
+  width: 80%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-family: cursive;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8464635854341737) 0%, rgba(255, 255, 255, 0) 100%);
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #1677ff;
+  }
+
+  &__description {
+    text-align: justify;
+    text-align-last: center;
+    padding: 0 2rem;
+    color: gray;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+}

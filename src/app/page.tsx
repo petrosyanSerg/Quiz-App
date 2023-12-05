@@ -1,10 +1,9 @@
 'use client'
 
+import StartPage from "@/Pages/StartPage";
+
 const Home = () => {
-  return (
-    <main>
-    </main>
-  )
+  return <StartPage/>
 }
 
 export default Home
