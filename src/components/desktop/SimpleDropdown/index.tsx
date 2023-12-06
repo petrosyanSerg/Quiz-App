@@ -1,17 +1,16 @@
 import {FC} from "react";
 import {Select} from 'antd';
+import {dropdownDataTypes} from "@/types";
 
 interface ISimpleDropdownProps {
-  options: [],
+  options: dropdownDataTypes[],
   placeholder: string,
-  handleChange: () => void
 }
 
-const SimpleDropdown: FC<ISimpleDropdownProps> = ({options, placeholder, handleChange}) => {
+const SimpleDropdown: FC<ISimpleDropdownProps> = ({options, placeholder}) => {
   return (
     <Select
       options={options}
-      onChange={handleChange}
       placeholder={placeholder}
     />
   )

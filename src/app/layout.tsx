@@ -1,4 +1,5 @@
 import {ReactNode} from 'react'
+import Head from "next/head";
 import type {Metadata} from 'next'
 
 import Providers from "@/providers";
@@ -7,9 +8,6 @@ import "@/helpers/scss/_global.scss"
 
 
 export const metadata: Metadata = {
-  icons: {
-    icon:'public/favicon.ico'
-  },
   title: 'Quiz App',
   description: 'Test Task Created By Sergey',
 }
@@ -22,6 +20,9 @@ export default function RootLayout({children}: IRootProps) {
   
   return (
     <html lang="en">
+    <Head>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
       <body>
          <Providers>
            {children}

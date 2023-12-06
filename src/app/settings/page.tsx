@@ -1,8 +1,6 @@
-const SettingsPage = () => {
-  return (
-    <div>
-      settings
-    </div>
-  )
+import SettingsPage from "@/Pages/SettingsPage";
+
+const Settings = () => {
+  return <SettingsPage/>
 }
-export default SettingsPage;
+export default Settings;
