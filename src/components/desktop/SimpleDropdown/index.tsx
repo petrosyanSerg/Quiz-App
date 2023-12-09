@@ -1,18 +1,29 @@
-import {FC} from "react";
 import {Select} from 'antd';
+
 import {dropdownDataTypes} from "@/types";
 
+import styles from "@/components/desktop/SimpleDropdown/index.module.scss"
+
 interface ISimpleDropdownProps {
-  options: dropdownDataTypes[],
+  value: string,
   placeholder: string,
+  options: dropdownDataTypes[],
+  setValue: (e: string) => void
 }
 
-const SimpleDropdown: FC<ISimpleDropdownProps> = ({options, placeholder}) => {
-  return (
-    <Select
-      options={options}
-      placeholder={placeholder}
-    />
-  )
-}
+const SimpleDropdown = ({
+                          value,
+                          options,
+                          setValue,
+                          placeholder
+                        }: ISimpleDropdownProps) => (
+  <Select
+    value={value}
+    options={options}
+    onChange={setValue}
+    placeholder={placeholder}
+    className={styles.simple_dropdown}
+  />
+)
+
 export default SimpleDropdown;

@@ -20,13 +20,13 @@ export default function RootLayout({children}: IRootProps) {
   
   return (
     <html lang="en">
-    <Head>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+      <Head>
+        <link rel="icon" href="/favicon.ico"/>
+      </Head>
       <body>
-         <Providers>
-           {children}
-         </Providers>
+        <Providers>
+          {children}
+       </Providers>
       </body>
     </html>
   )

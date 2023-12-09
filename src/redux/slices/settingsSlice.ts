@@ -1,47 +1,37 @@
+'use client'
+
 import {createSlice} from '@reduxjs/toolkit'
 import type {RootState} from "@/redux/store";
-import type {PayloadAction} from '@reduxjs/toolkit'
-
-import {LOADED} from "@/helpers/constants/global";
-import {categoriesThunkExtraReducer} from "@/redux/createThunk/settingsThunk";
-import {ICategoriesData} from "@/types";
 
 interface IFilters {
   limit: number;
-  selectedCategory: string;
-  selectedDifficulty: string;
+  category: string[];
+  difficulty: string;
 };
 
 interface ISettingsSlice {
-  loadingStatus: string;
-  error: string;
-  dropdownCategories: string[]; // Replace
   filters: IFilters;
-  categoriesData: ICategoriesData | {}
 };
 
 const initialState: ISettingsSlice = {
-  loadingStatus: LOADED,
-  error: "",
-  dropdownCategories: [],
   filters: {
-    limit: 0,
-    selectedCategory: "",
-    selectedDifficulty: ""
+    limit: 5,
+    category: [],
+    difficulty: ""
   },
-  categoriesData: {}
 }
 
 export const settingsSlice = createSlice({
   name: 'settingsSlice',
   initialState,
-  reducers: {},
-  extraReducers: builder => {
-    categoriesThunkExtraReducer(builder)
-  }
+  reducers: {
+    setFilters: (state, {payload}) => {
+      state.filters = payload
+    }
+  },
 })
 
-export const {} = settingsSlice.actions
+export const {setFilters} = settingsSlice.actions
 
-export const settingsSelector = (state: RootState) => state.settings
+export const filtersSelector = (state: RootState) => state.settings.filters
 export default settingsSlice.reducer

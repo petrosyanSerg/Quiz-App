@@ -1,8 +1,7 @@
+import QuizPage from "@/Pages/QuizPage";
+
 const QuizzesPage = () => {
-  return (
-    <div>
-      QuizzesPage
-    </div>
-  )
+  return <QuizPage/>
 }
+
 export default QuizzesPage;

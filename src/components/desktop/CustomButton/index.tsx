@@ -8,7 +8,7 @@ interface ICustomButtonProps {
   type: "text" | "default" | "link" | "primary" | "dashed" | undefined
 }
 
-const CustomButton: FC<ICustomButtonProps> = ({text, onClick, type = "default"}) => {
+const CustomButton: FC<ICustomButtonProps> = ({text, type = "default", onClick}) => {
   return (
     <Button
       size="large"

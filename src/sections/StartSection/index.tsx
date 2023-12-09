@@ -1,7 +1,7 @@
 import CustomButton from "@/components/desktop/CustomButton";
 import useNavigate from "@/helpers/hooks/useNavigate";
 
-import styles from "@/sections/QuizSection/index.module.scss"
+import styles from "@/sections/StartSection/index.module.scss"
 
 const StartSection = () => {
   const navigate = useNavigate()

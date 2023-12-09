@@ -3,14 +3,17 @@ import {dropdownDataTypes} from "@/types";
 export const dropdownData: dropdownDataTypes[] = [
   {
     label: 'Easy',
-    value: 'easy'
+    value: 'easy',
+    color: 'green'
   },
   {
     label: 'Medium',
-    value: 'medium'
+    value: 'medium',
+    color: 'yellow'
   },
   {
     label: 'Hard',
-    value: 'hard'
+    value: 'hard',
+    color: 'red'
   }
 ]

@@ -1,0 +1,17 @@
+.card {
+  min-width: 600px;
+  max-height: 350px;
+  padding-block: 1rem;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__radio {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+}

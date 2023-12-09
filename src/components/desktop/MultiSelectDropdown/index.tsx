@@ -1,26 +1,29 @@
-import {FC, useState} from "react";
-
 import {Select} from 'antd';
 
+import styles from "@/components/desktop/MultiSelectDropdown/index.module.scss"
+
 interface IMultiSelectDropdownProps {
+  options: any,
+  value: string[],
   placeholder: string,
-  onChange: () => void,
-  options: []
+  setValue: (e: string[]) => void
 }
 
-const MultiSelectDropdown: FC<IMultiSelectDropdownProps> = ({placeholder, options, onChange}) => {
-  const [value, setValue] = useState()
-  
-  return (
-    <Select
-      size="large"
-      value={value}
-      mode="multiple"
-      options={options}
-      onChange={setValue}
-      placeholder={placeholder}
-    />
-  )
-}
+const MultiSelectDropdown = ({
+                               value,
+                               options,
+                               setValue,
+                               placeholder,
+                             }: IMultiSelectDropdownProps) => (
+  <Select
+    value={value}
+    mode="multiple"
+    options={options}
+    placeholder={placeholder}
+    onChange={(e: string[]) => setValue(e)}
+    className={styles.multiselect__dropdown}
+  />
+)
+
 
 export default MultiSelectDropdown;
