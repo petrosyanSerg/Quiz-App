@@ -1,4 +1,4 @@
-import {useEffect, useMemo, useState} from "react";
+import {useEffect, useState} from "react";
 
 import {Button, message, Steps} from "antd";
 import {ICorrectQuestion, IStep} from "@/types";
@@ -54,7 +54,12 @@ const CardsList = ({questions}: ICardsList) => {
           className={styles.cardlist__container__steps}
         />
         <QuizCard
-          {...questions[current]}
+          current={current}
+          id={questions[current]?.id}
+          answers={questions[current]?.answers}
+          category={questions[current]?.category}
+          question={questions[current]?.question}
+          difficulty={questions[current]?.difficulty}
         />
       </div>
     </div>

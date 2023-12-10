@@ -13,6 +13,7 @@ import {filtersSelector, setFilters} from "@/redux/slices/settingsSlice";
 import useNavigate from "@/helpers/hooks/useNavigate";
 import {dropdownData} from "@/helpers/constants/settingsPage";
 import {getCategories} from "@/requests/api/categoriesReq";
+import {resetAnswers} from "@/redux/slices/quizSlice";
 
 import styles from "@/Pages/SettingsPage/index.module.scss"
 
@@ -58,6 +59,7 @@ const SettingsPage = () => {
       category: selectedCategory,
       difficulty: selectedDifficulty
     }))
+    dispatch(resetAnswers())
     messageApi.success("Your filters details have been saved.")
   }
   

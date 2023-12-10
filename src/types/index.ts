@@ -44,10 +44,21 @@ export interface ICorrectQuestion {
   question: string,
   category: string,
   difficulty: string,
+  current: number,
   answers: IAnswer[],
 }
 
 export interface IStep {
   key: string
   title: string
+}
+
+export interface IQuestionsAnswers {
+  id: string,
+  text: string,
+  isCorrect: boolean
+}
+
+export interface IQuestionAnswerSlice {
+  questionsAnswers: IQuestionsAnswers[]
 }
