@@ -27,11 +27,14 @@ export const settingsSlice = createSlice({
   reducers: {
     setFilters: (state, {payload}) => {
       state.filters = payload
+    },
+    resetFilters: (state) => {
+      state.filters = initialState.filters
     }
   },
 })
 
-export const {setFilters} = settingsSlice.actions
+export const {setFilters, resetFilters} = settingsSlice.actions
 
 export const filtersSelector = (state: RootState) => state.settings.filters
 export default settingsSlice.reducer

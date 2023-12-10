@@ -3,7 +3,8 @@ import {RootState} from "@/redux/store";
 import {IQuestionAnswerSlice} from "@/types";
 
 const initialState: IQuestionAnswerSlice = {
-  questionsAnswers: []
+  questionsAnswers: [],
+  numberCorrect: 0
 }
 
 export const quizSlice = createSlice({
@@ -20,12 +21,17 @@ export const quizSlice = createSlice({
     },
     resetAnswers: (state) => {
       state.questionsAnswers = []
+    },
+    setCountNumber: (state) => {
+      const filteredCorrect = state.questionsAnswers.filter(item => item.isCorrect)
+      state.numberCorrect = filteredCorrect.length
     }
   },
 })
 
-export const {setAnswer, resetAnswers} = quizSlice.actions
+export const {setAnswer, resetAnswers, setCountNumber} = quizSlice.actions
 
 export const questionsAnswersSelector = (state: RootState) => state.quiz.questionsAnswers
+export const numberCorrectSelector = (state: RootState) => state.quiz.numberCorrect
 
 export default quizSlice.reducer

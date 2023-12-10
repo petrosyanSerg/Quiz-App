@@ -61,4 +61,5 @@ export interface IQuestionsAnswers {
 
 export interface IQuestionAnswerSlice {
   questionsAnswers: IQuestionsAnswers[]
+  numberCorrect: number
 }

@@ -5,6 +5,9 @@ import {ICorrectQuestion, IStep} from "@/types";
 
 import QuizCard from "@/components/desktop/QuizCard";
 import {useCurrent} from "@/helpers/hooks/useCurrent";
+import useNavigate from "@/helpers/hooks/useNavigate";
+import {useAppDispatch, useAppSelector} from "@/redux/reduxHooks";
+import {questionsAnswersSelector, setCountNumber} from "@/redux/slices/quizSlice";
 
 import styles from '@/sections/CardsList/index.module.scss'
 
@@ -13,7 +16,12 @@ interface ICardsList {
 }
 
 const CardsList = ({questions}: ICardsList) => {
+  const navigate = useNavigate()
+  const questionAnswer = useAppSelector(questionsAnswersSelector)
+  const dispatch = useAppDispatch()
+  
   const [steps, setSteps] = useState<IStep[]>([])
+  
   const {current, next, prev} = useCurrent(steps.length)
   
   useEffect(() => {
@@ -25,6 +33,12 @@ const CardsList = ({questions}: ICardsList) => {
     setSteps(tempSteps)
   }, [questions]);
   
+  const handleDoneClick = () => {
+    dispatch(setCountNumber())
+    message.success('Quiz Successful')
+    navigate('/finishPage')
+  }
+  
   return (
     <div className={styles.cardlist__container}>
       <div className={styles.cardlist__container__buttons}>
@@ -34,7 +48,11 @@ const CardsList = ({questions}: ICardsList) => {
           </Button>
         )}
         {current === steps.length - 1 && (
-          <Button type="primary" onClick={() => message.success('Processing complete!')}>
+          <Button
+            type="primary"
+            onClick={handleDoneClick}
+            disabled={questionAnswer.length !== questions.length}
+          >
             Done
           </Button>
         )}

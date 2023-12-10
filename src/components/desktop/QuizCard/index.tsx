@@ -52,7 +52,7 @@ const QuizCard = ({
         </p>
       </div>
       <Radio.Group
-        size="middle"
+        size="large"
         buttonStyle="solid"
         optionType="button"
         onChange={handleChange}
