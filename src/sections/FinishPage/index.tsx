@@ -15,12 +15,6 @@ const FinishPage = () => {
   const questionAnswer = useAppSelector(questionsAnswersSelector)
   const dispatch = useAppDispatch()
   
-  useEffect(() => {
-    if (!questionAnswer.length) {
-      navigate("/")
-    }
-  }, []);
-  
   const resetState = () => {
     dispatch(resetAnswers())
     dispatch(resetFilters())
