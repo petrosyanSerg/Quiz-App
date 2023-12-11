@@ -20,7 +20,7 @@ export const quizSlice = createSlice({
       }
     },
     resetAnswers: (state) => {
-      state.questionsAnswers = []
+      state = initialState
     },
     setCountNumber: (state) => {
       const filteredCorrect = state.questionsAnswers.filter(item => item.isCorrect)
