@@ -1,3 +1,4 @@
+'use client'
 import FinishPage from "@/sections/FinishPage";
 
 const finishPage = () => (

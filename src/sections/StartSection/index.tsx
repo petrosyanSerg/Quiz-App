@@ -1,3 +1,4 @@
+'use client'
 import CustomButton from "@/components/desktop/CustomButton";
 import useNavigate from "@/helpers/hooks/useNavigate";
 

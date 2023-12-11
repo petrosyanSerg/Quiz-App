@@ -1,3 +1,4 @@
+'use client'
 import SettingsPage from "@/Pages/SettingsPage";
 
 const Settings = () => {

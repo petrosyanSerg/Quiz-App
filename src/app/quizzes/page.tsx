@@ -1,3 +1,4 @@
+'use client'
 import QuizPage from "@/Pages/QuizPage";
 
 const QuizzesPage = () => {
