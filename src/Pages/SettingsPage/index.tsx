@@ -16,6 +16,7 @@ import {getCategories} from "@/requests/api/categoriesReq";
 import {resetAnswers} from "@/redux/slices/quizSlice";
 
 import styles from "@/Pages/SettingsPage/index.module.scss"
+import Link from "next/link";
 
 const SettingsPage = () => {
   const navigate = useNavigate()
@@ -100,11 +101,9 @@ const SettingsPage = () => {
               text="Save Settings"
               onClick={handleClick}
             />
-            <CustomButton
-              type="primary"
-              text="Go To Home"
-              onClick={() => navigate('/')}
-            />
+            <Link href="/">
+              GO TO HOME
+            </Link>
           </div>
         </>
       }
