@@ -4,7 +4,7 @@ const useNavigate = () => {
   const router = useRouter();
   
   const navigate = (path: string) => {
-    router.push(path);
+    router.push(path, {shallow: true});
   };
   
   return navigate;
